@@ -1,0 +1,415 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Padrões do ENEM · ExP Desempenho</title>
+<meta name="description" content="61 padrões que se repetem na prova do ENEM, com 109 questões oficiais de 2016 a 2023, a alternativa correta destacada e o raciocínio de cada uma passo a passo.">
+<meta property="og:title" content="Padrões do ENEM · ExP Desempenho">
+<meta property="og:description" content="A prova se repete. 61 padrões, 109 questões oficiais, o raciocínio de cada uma passo a passo.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --creme:#F6EFE1; --tinta:#1C191A; --verde:#0B2318; --grama:#2FA35C;
+  --menta:#3EE6B0; --cinza:#595959;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Lato,Calibri,Arial,sans-serif;color:var(--tinta);background:var(--creme);
+  line-height:1.55;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+.wrap{width:100%;max-width:1080px;margin:0 auto;padding:0 20px}
+.btn{display:inline-block;background:var(--grama);color:#fff;font-weight:900;font-size:17px;
+  letter-spacing:.2px;padding:17px 34px;border-radius:9px;text-decoration:none;
+  transition:transform .12s ease, background .12s ease;border:none;cursor:pointer}
+.btn:hover{background:#268a4c;transform:translateY(-2px)}
+.btn.menta{background:var(--menta);color:var(--verde)}
+.btn.menta:hover{background:#2fd7a1}
+.btn.linha{background:transparent;color:var(--verde);border:2.5px solid var(--verde)}
+.btn.linha:hover{background:var(--verde);color:var(--creme)}
+em.hl{font-style:normal;background:linear-gradient(transparent 8%, rgba(62,230,176,.9) 8%,
+  rgba(62,230,176,.9) 94%, transparent 94%);padding:0 6px;border-radius:4px;
+  -webkit-box-decoration-break:clone;box-decoration-break:clone}
+
+/* ---------- topo ---------- */
+header{background:var(--verde);color:var(--creme);padding:16px 0}
+header .wrap{display:flex;justify-content:space-between;align-items:center;gap:16px}
+.marca{font-weight:900;letter-spacing:4px;font-size:13px;color:var(--menta)}
+header .nav{font-size:14px;color:#A8BDB1;font-weight:700}
+
+/* ---------- hero ---------- */
+.hero{background:var(--verde);color:var(--creme);padding:54px 0 70px;position:relative;overflow:hidden}
+.hero .glow{position:absolute;width:720px;height:720px;border-radius:50%;right:-280px;top:-320px;
+  background:radial-gradient(circle,rgba(62,230,176,.22) 0%,rgba(62,230,176,0) 68%);pointer-events:none}
+.hero .grid{display:grid;grid-template-columns:1.15fr .85fr;gap:44px;align-items:center;position:relative}
+.selo{display:inline-block;font-size:12px;font-weight:900;letter-spacing:3px;color:var(--menta);
+  border:2px solid rgba(62,230,176,.45);border-radius:40px;padding:7px 16px;margin-bottom:22px}
+.hero h1{font-size:58px;line-height:1.02;font-weight:900;letter-spacing:-2px}
+.hero h1 em.hl{color:var(--verde)}
+.hero p.lead{font-size:19px;color:#D5CEBF;margin-top:22px;max-width:520px}
+.hero .cta{margin-top:30px;display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+.hero .mini{font-size:14px;color:#9FB3A6;margin-top:16px}
+.capa{box-shadow:0 26px 60px rgba(0,0,0,.42);border-radius:10px;overflow:hidden;
+  transform:rotate(-1.6deg)}
+
+/* ---------- barra de números ---------- */
+.numeros{background:var(--menta);color:var(--verde)}
+.numeros .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;padding:24px 20px;text-align:center}
+.numeros b{display:block;font-size:34px;font-weight:900;line-height:1;letter-spacing:-1px}
+.numeros span{font-size:12.5px;font-weight:900;letter-spacing:1.6px;text-transform:uppercase;opacity:.75}
+
+/* ---------- seções ---------- */
+section{padding:72px 0}
+h2{font-size:40px;font-weight:900;line-height:1.08;letter-spacing:-1.4px;color:var(--verde)}
+h2+p.sub{font-size:18px;color:#4A4642;margin-top:16px;max-width:680px}
+.regua{width:84px;height:6px;background:var(--grama);margin-bottom:22px}
+
+.problema{background:#EFE6D4}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:38px}
+.card{background:var(--creme);border:1.5px solid rgba(11,35,24,.12);border-radius:12px;padding:26px}
+.card h3{font-size:19px;font-weight:900;color:var(--verde);margin-bottom:9px}
+.card p{font-size:15.5px;color:#4A4642}
+
+.anatomia .grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:46px;align-items:center;margin-top:34px}
+.passos{list-style:none;margin-top:8px}
+.passos li{display:flex;gap:15px;margin-bottom:20px;align-items:flex-start}
+.passos b{flex:none;width:34px;height:34px;border-radius:9px;background:var(--verde);color:var(--menta);
+  display:grid;place-items:center;font-size:14px;font-weight:900}
+.passos p{font-size:16px;color:#413D39}
+.passos p strong{color:var(--verde)}
+.print{border-radius:10px;box-shadow:0 18px 44px rgba(11,35,24,.2);border:1px solid rgba(11,35,24,.14)}
+
+.dentro{background:var(--verde);color:var(--creme)}
+.dentro h2{color:var(--creme)}
+.dentro .regua{background:var(--menta)}
+.dias{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:38px}
+.dia{background:rgba(255,255,255,.055);border:1.5px solid rgba(62,230,176,.3);border-radius:14px;padding:30px}
+.dia h3{font-size:24px;font-weight:900;margin-bottom:6px}
+.dia .qt{font-size:13px;font-weight:900;letter-spacing:2px;color:var(--menta);margin-bottom:18px}
+.dia ul{list-style:none;font-size:16px;color:#D5CEBF}
+.dia li{padding:9px 0 9px 26px;position:relative;border-bottom:1px solid rgba(255,255,255,.08)}
+.dia li:last-child{border-bottom:none}
+.dia li::before{content:"";position:absolute;left:0;top:17px;width:11px;height:11px;border-radius:3px;
+  background:var(--menta)}
+
+.amostra{background:#EFE6D4}
+.tiras{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:38px}
+.tiras img{border-radius:9px;box-shadow:0 14px 34px rgba(11,35,24,.18);border:1px solid rgba(11,35,24,.12)}
+.tiras figcaption{font-size:13.5px;color:var(--cinza);margin-top:11px;font-weight:700}
+
+/* ---------- planos ---------- */
+.planos{background:var(--creme)}
+.grade{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:40px;align-items:stretch}
+.plano{background:#fff;border:2px solid rgba(11,35,24,.13);border-radius:16px;padding:32px 26px;
+  display:flex;flex-direction:column}
+.plano.destaque{border-color:var(--grama);box-shadow:0 20px 48px rgba(47,163,92,.2);position:relative}
+.fita{position:absolute;top:-15px;left:50%;transform:translateX(-50%);background:var(--verde);
+  color:var(--menta);font-size:11.5px;font-weight:900;letter-spacing:2px;padding:7px 18px;border-radius:30px;
+  white-space:nowrap}
+.plano h3{font-size:21px;font-weight:900;color:var(--verde);line-height:1.2}
+.plano .area{font-size:13.5px;font-weight:900;letter-spacing:1.4px;color:var(--grama);
+  text-transform:uppercase;margin-top:7px}
+.preco{margin:22px 0 6px;display:flex;align-items:flex-end;gap:7px}
+.preco .cifrao{font-size:19px;font-weight:900;color:var(--verde);padding-bottom:9px}
+.preco .valor{font-size:50px;font-weight:900;color:var(--verde);line-height:.95;letter-spacing:-2.5px}
+.de{font-size:14px;color:var(--cinza);text-decoration:line-through}
+.plano ul{list-style:none;margin:20px 0 26px;font-size:15.5px;color:#413D39}
+.plano li{padding:7px 0 7px 24px;position:relative}
+.plano li::before{content:"✓";position:absolute;left:0;color:var(--grama);font-weight:900}
+.plano .btn{margin-top:auto;text-align:center}
+.pag{text-align:center;font-size:13.5px;color:var(--cinza);margin-top:24px}
+
+/* ---------- faq ---------- */
+.faq{background:#EFE6D4}
+details{background:var(--creme);border:1.5px solid rgba(11,35,24,.12);border-radius:11px;
+  padding:19px 24px;margin-top:13px}
+details[open]{border-color:var(--grama)}
+summary{font-size:17px;font-weight:900;color:var(--verde);cursor:pointer;list-style:none;
+  display:flex;justify-content:space-between;gap:16px;align-items:center}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-size:25px;color:var(--grama);line-height:1}
+details[open] summary::after{content:"–"}
+details p{font-size:15.5px;color:#4A4642;margin-top:13px}
+
+/* ---------- fechamento ---------- */
+.fecha{background:var(--verde);color:var(--creme);text-align:center}
+.fecha h2{color:var(--creme);font-size:44px}
+.fecha p{font-size:18px;color:#CFC8B9;margin:20px auto 32px;max-width:620px}
+
+footer{background:#071A12;color:#8FA398;font-size:13.5px;padding:34px 0}
+footer .wrap{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap}
+footer a{color:var(--menta);text-decoration:none}
+
+@media (max-width:900px){
+  .hero .grid,.anatomia .grid{grid-template-columns:1fr;gap:34px}
+  .hero h1{font-size:40px;letter-spacing:-1.2px}
+  h2{font-size:31px}
+  .fecha h2{font-size:33px}
+  .cards,.dias,.tiras,.grade{grid-template-columns:1fr}
+  .numeros .wrap{grid-template-columns:1fr 1fr;gap:22px}
+  .capa{max-width:330px;margin:0 auto}
+  section{padding:54px 0}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <span class="marca">EXP DESEMPENHO</span>
+    <span class="nav">Padrões do ENEM</span>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="glow"></div>
+  <div class="wrap grid">
+    <div>
+      <span class="selo">MATERIAL EM PDF · ENTREGA IMEDIATA</span>
+      <h1>A prova se repete.<br>Você só nunca<br><em class="hl">tinha visto.</em></h1>
+      <p class="lead">O ENEM cobra os mesmos raciocínios ano após ano, com roupa nova.
+        Mapeamos 61 desses padrões nas provas de 2016 a 2023 e mostramos, questão por questão,
+        como reconhecer cada um em menos de um minuto.</p>
+      <div class="cta">
+        <a class="btn menta" href="#planos">Quero os padrões</a>
+        <a class="btn linha" style="color:#F6EFE1;border-color:rgba(246,239,225,.5)" href="#amostra">Ver por dentro</a>
+      </div>
+      <p class="mini">A partir de R$ 14,99 · Pix, cartão ou boleto · Acesso na hora</p>
+    </div>
+    <div>
+      <img class="capa" src="pagina-dia1-solo.png" alt="Página do material Padrões do ENEM">
+    </div>
+  </div>
+</div>
+
+<div class="numeros">
+  <div class="wrap">
+    <div><b>61</b><span>padrões</span></div>
+    <div><b>109</b><span>questões oficiais</span></div>
+    <div><b>8</b><span>anos de prova</span></div>
+    <div><b>5</b><span>áreas</span></div>
+  </div>
+</div>
+
+<section class="problema">
+  <div class="wrap">
+    <div class="regua"></div>
+    <h2>Resolver mil questões não<br>é o mesmo que entender a prova</h2>
+    <p class="sub">Quem faz simulado sem método repete o mesmo erro em provas diferentes, porque nunca
+      percebeu que era o mesmo erro. O padrão é o que liga uma questão de 2017 a uma de 2023.</p>
+    <div class="cards">
+      <div class="card">
+        <h3>Você erra o mesmo tipo</h3>
+        <p>Não é falta de conteúdo. É um raciocínio específico que a banca cobra e que passa
+          despercebido toda vez — em Linguagens, em Humanas, em Natureza.</p>
+      </div>
+      <div class="card">
+        <h3>O gabarito não ensina</h3>
+        <p>Saber que a resposta é a letra D não diz por que as outras quatro estão erradas,
+          nem como chegar lá sozinho na próxima.</p>
+      </div>
+      <div class="card">
+        <h3>Falta tempo de prova</h3>
+        <p>Reconhecer o padrão em dez segundos é o que devolve minutos para as questões
+          que realmente exigem cálculo e leitura longa.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="anatomia" id="anatomia">
+  <div class="wrap">
+    <div class="regua"></div>
+    <h2>Um padrão por página.<br>Duas questões reais ao lado.</h2>
+    <p class="sub">Nada de teoria solta. Cada página mostra o padrão, a cadeia de raciocínio e
+      duas questões oficiais do ENEM onde ele aparece — com a alternativa certa já destacada.</p>
+    <div class="grid">
+      <ol class="passos">
+        <li><b>01</b><p><strong>O nome do padrão.</strong> Uma frase que você consegue repetir
+          na hora da prova, do tipo “a pergunta é a intenção, não o conteúdo”.</p></li>
+        <li><b>02</b><p><strong>Quando ele aparece.</strong> O sinal no enunciado que entrega
+          que a banca está cobrando aquele raciocínio.</p></li>
+        <li><b>03</b><p><strong>A cadeia de quatro passos.</strong> A sequência exata para sair
+          do enunciado até a alternativa, sem chute.</p></li>
+        <li><b>04</b><p><strong>Duas questões oficiais, recortadas da prova.</strong> Com a
+          alternativa correta grifada e a explicação de por que é ela — e não as outras.</p></li>
+      </ol>
+      <img class="print" src="pagina-dia2-par.png" alt="Exemplo de página do Dia 2">
+    </div>
+  </div>
+</section>
+
+<section class="dentro">
+  <div class="wrap">
+    <div class="regua"></div>
+    <h2>O que tem dentro</h2>
+    <div class="dias">
+      <div class="dia">
+        <h3>Dia 1 — Linguagens e Humanas</h3>
+        <div class="qt">31 PADRÕES · 62 QUESTÕES</div>
+        <ul>
+          <li>Intenção do autor, tese e ponto de vista</li>
+          <li>Variação linguística e identidade</li>
+          <li>Gênero e tipo textual</li>
+          <li>Tecnologia, desigualdade e sociedade</li>
+          <li>Arte brasileira e referências culturais</li>
+          <li>Cidadania, poder e território</li>
+          <li>Dois textos: convergência e divergência</li>
+          <li>Geografia física, migração e meio ambiente</li>
+        </ul>
+      </div>
+      <div class="dia">
+        <h3>Dia 2 — Natureza e Matemática</h3>
+        <div class="qt">30 PADRÕES · 47 QUESTÕES</div>
+        <ul>
+          <li>Leitura de gráfico e de tabela</li>
+          <li>Estequiometria e cálculo de concentração</li>
+          <li>Oxidação, redução e ligação química</li>
+          <li>Energia, calor e mudança de estado</li>
+          <li>Eletricidade e circuitos</li>
+          <li>Genética, ecologia e fisiologia</li>
+          <li>Proporção, porcentagem e escala</li>
+          <li>Notação científica e unidades</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="amostra" id="amostra">
+  <div class="wrap">
+    <div class="regua"></div>
+    <h2>Três páginas, do jeito<br>que você vai receber</h2>
+    <p class="sub">Questões oficiais do ENEM (INEP/MEC), recortadas direto do caderno de prova.</p>
+    <div class="tiras">
+      <figure>
+        <img src="pagina-dia1-par.png" alt="Padrão de Linguagens com duas questões">
+        <figcaption>Linguagens · duas questões na mesma página</figcaption>
+      </figure>
+      <figure>
+        <img src="pagina-dia1-solo.png" alt="Padrão com uma questão em destaque">
+        <figcaption>Humanas · questão única em destaque</figcaption>
+      </figure>
+      <figure>
+        <img src="pagina-dia2-par.png" alt="Padrão de Natureza e Matemática">
+        <figcaption>Natureza · padrão com cadeia de raciocínio</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="planos" id="planos">
+  <div class="wrap">
+    <div class="regua"></div>
+    <h2>Escolha o seu</h2>
+    <p class="sub">Entrega imediata por e-mail, em PDF. Dá para ler no celular, no computador
+      ou imprimir.</p>
+    <div class="grade">
+      <div class="plano">
+        <h3>Padrões do Dia 1</h3>
+        <div class="area">Linguagens e Humanas</div>
+        <div class="preco"><span class="cifrao">R$</span><span class="valor">14,99</span></div>
+        <ul>
+          <li>31 padrões</li>
+          <li>62 questões oficiais</li>
+          <li>PDF de 31 páginas</li>
+          <li>Acesso imediato</li>
+        </ul>
+        <a class="btn linha" data-plano="dia1" href="https://pay.kiwify.com.br/6RuvQul">Comprar o Dia 1</a>
+      </div>
+
+      <div class="plano destaque">
+        <span class="fita">MELHOR ESCOLHA · ECONOMIZE R$ 4,99</span>
+        <h3>Os dois dias</h3>
+        <div class="area">A prova inteira</div>
+        <div class="preco"><span class="cifrao">R$</span><span class="valor">24,99</span></div>
+        <div class="de">R$ 29,98 comprando separado</div>
+        <ul>
+          <li>61 padrões das cinco áreas</li>
+          <li>109 questões oficiais</li>
+          <li>Dois PDFs, 61 páginas</li>
+          <li>Acesso imediato</li>
+        </ul>
+        <a class="btn" data-plano="combo" href="https://pay.kiwify.com.br/ZDzUBiP">Quero os dois</a>
+      </div>
+
+      <div class="plano">
+        <h3>Padrões do Dia 2</h3>
+        <div class="area">Natureza e Matemática</div>
+        <div class="preco"><span class="cifrao">R$</span><span class="valor">14,99</span></div>
+        <ul>
+          <li>30 padrões</li>
+          <li>47 questões oficiais</li>
+          <li>PDF de 30 páginas</li>
+          <li>Acesso imediato</li>
+        </ul>
+        <a class="btn linha" data-plano="dia2" href="https://pay.kiwify.com.br/rxqs5GL">Comprar o Dia 2</a>
+      </div>
+    </div>
+    <p class="pag">Pagamento por Pix, cartão ou boleto · Compra processada pela Kiwify ·
+      Garantia de 7 dias prevista no Código de Defesa do Consumidor</p>
+  </div>
+</section>
+
+<section class="faq">
+  <div class="wrap">
+    <div class="regua"></div>
+    <h2>Perguntas que todo mundo faz</h2>
+    <details><summary>Como eu recebo o material?</summary>
+      <p>Assim que o pagamento é aprovado, você recebe um e-mail da Kiwify com o acesso.
+        O PDF fica disponível para baixar quantas vezes quiser.</p></details>
+    <details><summary>As questões são oficiais mesmo?</summary>
+      <p>Sim. Todas vêm das provas aplicadas do ENEM entre 2016 e 2023, publicadas pelo INEP/MEC,
+        e aparecem recortadas direto do caderno de prova.</p></details>
+    <details><summary>Serve para quem está começando agora?</summary>
+      <p>Serve. O material não assume conteúdo avançado: ele ensina a ler o enunciado e a
+        reconhecer o que a banca está pedindo. Quem já estuda há tempo tende a ganhar
+        velocidade; quem está começando ganha direção.</p></details>
+    <details><summary>Qual a diferença entre o Dia 1 e o Dia 2?</summary>
+      <p>Dia 1 cobre Linguagens e Ciências Humanas. Dia 2 cobre Ciências da Natureza e
+        Matemática. São materiais independentes — e você pode levar os dois por R$ 24,99.</p></details>
+    <details><summary>Dá para imprimir?</summary>
+      <p>Dá. O PDF é em A4 e foi desenhado para ficar legível impresso, inclusive em
+        preto e branco.</p></details>
+    <details><summary>E se eu não gostar?</summary>
+      <p>Você tem 7 dias para pedir reembolso, direto pela Kiwify, sem precisar justificar.</p></details>
+  </div>
+</section>
+
+<section class="fecha">
+  <div class="wrap">
+    <h2>A prova de novembro<br>já foi escrita antes.</h2>
+    <p>Os padrões estão nas oito provas anteriores. A diferença é quem chega sabendo
+      reconhecê-los — e quem descobre no dia.</p>
+    <a class="btn menta" href="#planos">Ver os planos</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>ExP Desempenho · Material de autoria própria · Questões oficiais do ENEM (INEP/MEC)</span>
+    <span><a href="https://www.instagram.com/expdesempenho" target="_blank" rel="noopener">@expdesempenho</a></span>
+  </div>
+</footer>
+
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','1011587088582742');fbq('track','PageView');
+document.querySelectorAll('a[data-plano]').forEach(function(a){
+  a.addEventListener('click',function(){
+    if(window.fbq)fbq('track','InitiateCheckout',{content_name:a.dataset.plano});
+  });
+});
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1011587088582742&ev=PageView&noscript=1"></noscript>
+
+</body>
+</html>
