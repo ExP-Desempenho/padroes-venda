@@ -2,6 +2,14 @@
 <html lang="pt-BR">
 <head>
 <meta charset="utf-8">
+<script>
+// LGPD (Consent Mode v2): ligado por padrão; quem clicou em "Recusar" no aviso fica com tudo negado.
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+var lgpd = ''; try { lgpd = localStorage.getItem('lgpd') || ''; } catch (e) {}
+var c = lgpd === 'recusado' ? 'denied' : 'granted';
+gtag('consent', 'default', { ad_storage: c, ad_user_data: c, ad_personalization: c, analytics_storage: c });
+</script>
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -149,6 +157,15 @@ details p{font-size:15.5px;color:#4A4642;margin-top:13px}
 footer{background:#071A12;color:#8FA398;font-size:13.5px;padding:34px 0}
 footer .wrap{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap}
 footer a{color:var(--menta);text-decoration:none}
+
+.lgpd{position:fixed;left:16px;right:16px;bottom:16px;z-index:50;max-width:720px;margin:0 auto;
+  background:var(--verde);color:var(--creme);border:1.5px solid rgba(62,230,176,.35);border-radius:12px;
+  padding:14px 16px;display:flex;gap:12px;align-items:center;flex-wrap:wrap;box-shadow:0 14px 40px rgba(0,0,0,.35)}
+.lgpd[hidden]{display:none}
+.lgpd p{flex:1 1 260px;font-size:14px;color:#D5CEBF}
+.lgpd a{color:var(--menta)}
+.lgpd .btn{font-size:14px;padding:10px 18px}
+.lgpd .btn.linha{color:var(--creme);border-color:rgba(246,239,225,.5)}
 
 @media (max-width:900px){
   .hero .grid,.anatomia .grid{grid-template-columns:1fr;gap:34px}
@@ -437,7 +454,7 @@ window.dataLayer = window.dataLayer || [];
     new URLSearchParams(location.search).forEach(function (v, k) { if (!u.searchParams.has(k)) u.searchParams.set(k, v); });
     var cid = ck('_ga').split('.').slice(2).join('.');
     var gs = ck('_ga_CYZ3LZE0KW'), sid = (gs.match(/^GS1\.\d+\.(\d+)/) || gs.match(/[.$]s(\d+)/) || [])[1];
-    if (cid) u.searchParams.set('sck', cid + (sid ? '_' + sid : ''));
+    if (cid && lgpd !== 'recusado') u.searchParams.set('sck', cid + (sid ? '_' + sid : ''));
     a.href = u.toString();
     push({ event: 'begin_checkout', ecommerce: { currency: 'BRL', value: item.price, items: [item] } });
   });
@@ -446,6 +463,29 @@ window.dataLayer = window.dataLayer || [];
     d.addEventListener('toggle', function () {
       if (d.open) dataLayer.push({ event: 'faq_open', faq_question: d.querySelector('summary').textContent.trim() });
     });
+  });
+})();
+</script>
+<div class="lgpd" id="lgpd" role="region" aria-label="Aviso de cookies" hidden>
+  <p>Usamos cookies para medir visitas e melhorar nossos anúncios.
+    <a href="https://aviradaenem.com.br/privacidade.html" target="_blank" rel="noopener">Política de privacidade</a></p>
+  <button class="btn linha" type="button" data-lgpd="recusado">Recusar</button>
+  <button class="btn" type="button" data-lgpd="ok">Entendi</button>
+</div>
+<script>
+(function () {
+  var box = document.getElementById('lgpd');
+  if (!lgpd) box.hidden = false;
+  box.addEventListener('click', function (e) {
+    var v = e.target.getAttribute('data-lgpd');
+    if (!v) return;
+    lgpd = v;
+    try { localStorage.setItem('lgpd', v); } catch (err) {}
+    if (v === 'recusado') {
+      gtag('consent', 'update', { ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied', analytics_storage: 'denied' });
+      if (window.fbq) fbq('consent', 'revoke');
+    }
+    box.hidden = true;
   });
 })();
 </script>

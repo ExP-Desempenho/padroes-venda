@@ -191,7 +191,19 @@
           "11",
           "12"
         ],
-        "tagFiringOption": "ONCE_PER_EVENT"
+        "tagFiringOption": "ONCE_PER_EVENT",
+        "consentSettings": {
+          "consentStatus": "NEEDED",
+          "consentType": {
+            "type": "LIST",
+            "list": [
+              {
+                "type": "TEMPLATE",
+                "value": "ad_storage"
+              }
+            ]
+          }
+        }
       }
     ],
     "trigger": [
