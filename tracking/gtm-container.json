@@ -1,0 +1,430 @@
+{
+  "exportFormatVersion": 2,
+  "exportTime": "2026-10-05 12:30:00",
+  "containerVersion": {
+    "path": "accounts/6378384284/containers/266163353/versions/0",
+    "accountId": "6378384284",
+    "containerId": "266163353",
+    "containerVersionId": "0",
+    "container": {
+      "path": "accounts/6378384284/containers/266163353",
+      "accountId": "6378384284",
+      "containerId": "266163353",
+      "name": "padroes.aviradaenem.com.br",
+      "publicId": "GTM-T6HZ3F2R",
+      "usageContext": [
+        "WEB"
+      ]
+    },
+    "tag": [
+      {
+        "accountId": "6378384284",
+        "containerId": "266163353",
+        "tagId": "1",
+        "name": "Google Tag · GA4 (G-CYZ3LZE0KW)",
+        "type": "googtag",
+        "parameter": [
+          {
+            "type": "TEMPLATE",
+            "key": "tagId",
+            "value": "G-CYZ3LZE0KW"
+          }
+        ],
+        "firingTriggerId": [
+          "2147479553"
+        ],
+        "tagFiringOption": "ONCE_PER_EVENT"
+      },
+      {
+        "accountId": "6378384284",
+        "containerId": "266163353",
+        "tagId": "2",
+        "name": "GA4 · eventos do dataLayer (view_item, begin_checkout, cta_click, faq_open)",
+        "type": "gaawe",
+        "parameter": [
+          {
+            "type": "BOOLEAN",
+            "key": "sendEcommerceData",
+            "value": "true"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "getEcommerceDataFrom",
+            "value": "dataLayer"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "eventName",
+            "value": "{{Event}}"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "measurementIdOverride",
+            "value": "G-CYZ3LZE0KW"
+          },
+          {
+            "type": "LIST",
+            "key": "eventSettingsTable",
+            "list": [
+              {
+                "type": "MAP",
+                "map": [
+                  {
+                    "type": "TEMPLATE",
+                    "key": "parameter",
+                    "value": "cta_text"
+                  },
+                  {
+                    "type": "TEMPLATE",
+                    "key": "parameterValue",
+                    "value": "{{DLV - cta_text}}"
+                  }
+                ]
+              },
+              {
+                "type": "MAP",
+                "map": [
+                  {
+                    "type": "TEMPLATE",
+                    "key": "parameter",
+                    "value": "cta_target"
+                  },
+                  {
+                    "type": "TEMPLATE",
+                    "key": "parameterValue",
+                    "value": "{{DLV - cta_target}}"
+                  }
+                ]
+              },
+              {
+                "type": "MAP",
+                "map": [
+                  {
+                    "type": "TEMPLATE",
+                    "key": "parameter",
+                    "value": "faq_question"
+                  },
+                  {
+                    "type": "TEMPLATE",
+                    "key": "parameterValue",
+                    "value": "{{DLV - faq_question}}"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "firingTriggerId": [
+          "10"
+        ],
+        "tagFiringOption": "ONCE_PER_EVENT"
+      },
+      {
+        "accountId": "6378384284",
+        "containerId": "266163353",
+        "tagId": "3",
+        "name": "GA4 · scroll_depth",
+        "type": "gaawe",
+        "parameter": [
+          {
+            "type": "BOOLEAN",
+            "key": "sendEcommerceData",
+            "value": "false"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "eventName",
+            "value": "scroll_depth"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "measurementIdOverride",
+            "value": "G-CYZ3LZE0KW"
+          },
+          {
+            "type": "LIST",
+            "key": "eventSettingsTable",
+            "list": [
+              {
+                "type": "MAP",
+                "map": [
+                  {
+                    "type": "TEMPLATE",
+                    "key": "parameter",
+                    "value": "percent_scrolled"
+                  },
+                  {
+                    "type": "TEMPLATE",
+                    "key": "parameterValue",
+                    "value": "{{Scroll Depth Threshold}}"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "firingTriggerId": [
+          "12"
+        ],
+        "tagFiringOption": "ONCE_PER_EVENT"
+      },
+      {
+        "accountId": "6378384284",
+        "containerId": "266163353",
+        "tagId": "4",
+        "name": "Meta · Pixel + CAPI (PageView, ViewContent, CheckoutClick, ScrollDepth)",
+        "type": "html",
+        "parameter": [
+          {
+            "type": "TEMPLATE",
+            "key": "html",
+            "value": "<script>\n(function () {\n  var PIXEL = '1011587088582742', ENDPOINT = 'https://padroes-api.vercel.app/api/e';\n  var ev = {{Event}}, ec = {{DLV - ecommerce}}, name, data = {};\n  if (ev === 'gtm.js') name = 'PageView';\n  else if (ev === 'view_item') name = 'ViewContent';\n  else if (ev === 'begin_checkout') name = 'CheckoutClick';\n  else if (ev === 'gtm.scrollDepth') { name = 'ScrollDepth'; data = { percent: {{Scroll Depth Threshold}} }; }\n  else return;\n  if (name !== 'ScrollDepth' && name !== 'PageView' && ec && ec.items) {\n    data = {\n      content_type: 'product',\n      content_ids: ec.items.map(function (i) { return i.item_id; }),\n      contents: ec.items.map(function (i) { return { id: i.item_id, quantity: 1, item_price: i.price }; }),\n      content_name: ec.items.map(function (i) { return i.item_name; }).join(' | '),\n      currency: 'BRL'\n    };\n    if (ec.value) data.value = ec.value;\n  }\n\n  function ck(n) { var m = document.cookie.match('(?:^|; )' + n + '=([^;]*)'); return m ? decodeURIComponent(m[1]) : ''; }\n  var dom = /(^|\\.)aviradaenem\\.com\\.br$/.test(location.hostname) ? ';domain=.aviradaenem.com.br' : '';\n  function setck(n, v) { document.cookie = n + '=' + v + ';path=/;max-age=7776000;SameSite=Lax' + dom; }\n  function qs(k) { var m = location.search.match(new RegExp('[?&]' + k + '=([^&]+)')); return m ? decodeURIComponent(m[1]) : ''; }\n\n  // external_id próprio + _fbp/_fbc criados antes do Pixel, para o CAPI já sair com eles no 1º PageView.\n  var xid = ck('_xid') || (Date.now().toString(36) + Math.random().toString(36).slice(2));\n  setck('_xid', xid);\n  var fbp = ck('_fbp');\n  if (!fbp) { fbp = 'fb.1.' + Date.now() + '.' + Math.floor(Math.random() * 1e10); setck('_fbp', fbp); }\n  var fbc = ck('_fbc'), fbclid = qs('fbclid');\n  if (fbclid && (!fbc || fbc.split('.').slice(3).join('.') !== fbclid)) { fbc = 'fb.1.' + Date.now() + '.' + fbclid; setck('_fbc', fbc); }\n\n  if (!window.fbq) {\n    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?\n    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;\n    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;\n    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,\n    document,'script','https://connect.facebook.net/en_US/fbevents.js');\n    fbq('init', PIXEL, { external_id: xid });\n  }\n\n  var id = name + '.' + Date.now() + '.' + Math.random().toString(36).slice(2, 8);\n  fbq(name === 'PageView' || name === 'ViewContent' ? 'track' : 'trackCustom', name, data, { eventID: id });\n\n  var body = JSON.stringify({\n    event_name: name, event_id: id, event_source_url: location.href, custom_data: data,\n    fbp: fbp, fbc: fbc, external_id: xid, test_event_code: qs('test_event_code')\n  });\n  if (navigator.sendBeacon) navigator.sendBeacon(ENDPOINT, body);\n  else fetch(ENDPOINT, { method: 'POST', body: body, keepalive: true, mode: 'no-cors' });\n})();\n</script>"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "supportDocumentWrite",
+            "value": "false"
+          }
+        ],
+        "firingTriggerId": [
+          "2147479553",
+          "11",
+          "12"
+        ],
+        "tagFiringOption": "ONCE_PER_EVENT"
+      }
+    ],
+    "trigger": [
+      {
+        "accountId": "6378384284",
+        "containerId": "266163353",
+        "triggerId": "10",
+        "name": "CE · eventos GA4 do dataLayer",
+        "type": "CUSTOM_EVENT",
+        "customEventFilter": [
+          {
+            "type": "MATCH_REGEX",
+            "parameter": [
+              {
+                "type": "TEMPLATE",
+                "key": "arg0",
+                "value": "{{_event}}"
+              },
+              {
+                "type": "TEMPLATE",
+                "key": "arg1",
+                "value": "^(view_item|begin_checkout|cta_click|faq_open)$"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "accountId": "6378384284",
+        "containerId": "266163353",
+        "triggerId": "11",
+        "name": "CE · eventos Meta (view_item, begin_checkout)",
+        "type": "CUSTOM_EVENT",
+        "customEventFilter": [
+          {
+            "type": "MATCH_REGEX",
+            "parameter": [
+              {
+                "type": "TEMPLATE",
+                "key": "arg0",
+                "value": "{{_event}}"
+              },
+              {
+                "type": "TEMPLATE",
+                "key": "arg1",
+                "value": "^(view_item|begin_checkout)$"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "accountId": "6378384284",
+        "containerId": "266163353",
+        "triggerId": "12",
+        "name": "Rolagem 25/50/75/90%",
+        "type": "SCROLL_DEPTH",
+        "parameter": [
+          {
+            "type": "BOOLEAN",
+            "key": "verticalThresholdOn",
+            "value": "true"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "verticalThresholdUnits",
+            "value": "PERCENT"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "verticalThresholdsPercent",
+            "value": "25,50,75,90"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "horizontalThresholdOn",
+            "value": "false"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "triggerStartOption",
+            "value": "WINDOW_LOAD"
+          }
+        ]
+      }
+    ],
+    "variable": [
+      {
+        "accountId": "6378384284",
+        "containerId": "266163353",
+        "variableId": "20",
+        "name": "DLV - ecommerce",
+        "type": "v",
+        "parameter": [
+          {
+            "type": "INTEGER",
+            "key": "dataLayerVersion",
+            "value": "2"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "setDefaultValue",
+            "value": "false"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "name",
+            "value": "ecommerce"
+          }
+        ]
+      },
+      {
+        "accountId": "6378384284",
+        "containerId": "266163353",
+        "variableId": "21",
+        "name": "DLV - cta_text",
+        "type": "v",
+        "parameter": [
+          {
+            "type": "INTEGER",
+            "key": "dataLayerVersion",
+            "value": "2"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "setDefaultValue",
+            "value": "false"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "name",
+            "value": "cta_text"
+          }
+        ]
+      },
+      {
+        "accountId": "6378384284",
+        "containerId": "266163353",
+        "variableId": "22",
+        "name": "DLV - cta_target",
+        "type": "v",
+        "parameter": [
+          {
+            "type": "INTEGER",
+            "key": "dataLayerVersion",
+            "value": "2"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "setDefaultValue",
+            "value": "false"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "name",
+            "value": "cta_target"
+          }
+        ]
+      },
+      {
+        "accountId": "6378384284",
+        "containerId": "266163353",
+        "variableId": "23",
+        "name": "DLV - faq_question",
+        "type": "v",
+        "parameter": [
+          {
+            "type": "INTEGER",
+            "key": "dataLayerVersion",
+            "value": "2"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "setDefaultValue",
+            "value": "false"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "name",
+            "value": "faq_question"
+          }
+        ]
+      }
+    ],
+    "builtInVariable": [
+      {
+        "accountId": "6378384284",
+        "containerId": "266163353",
+        "type": "PAGE_URL",
+        "name": "Page URL"
+      },
+      {
+        "accountId": "6378384284",
+        "containerId": "266163353",
+        "type": "PAGE_HOSTNAME",
+        "name": "Page Hostname"
+      },
+      {
+        "accountId": "6378384284",
+        "containerId": "266163353",
+        "type": "PAGE_PATH",
+        "name": "Page Path"
+      },
+      {
+        "accountId": "6378384284",
+        "containerId": "266163353",
+        "type": "REFERRER",
+        "name": "Referrer"
+      },
+      {
+        "accountId": "6378384284",
+        "containerId": "266163353",
+        "type": "EVENT",
+        "name": "Event"
+      },
+      {
+        "accountId": "6378384284",
+        "containerId": "266163353",
+        "type": "SCROLL_DEPTH_THRESHOLD",
+        "name": "Scroll Depth Threshold"
+      },
+      {
+        "accountId": "6378384284",
+        "containerId": "266163353",
+        "type": "SCROLL_DEPTH_UNITS",
+        "name": "Scroll Depth Units"
+      },
+      {
+        "accountId": "6378384284",
+        "containerId": "266163353",
+        "type": "SCROLL_DEPTH_DIRECTION",
+        "name": "Scroll Depth Direction"
+      }
+    ]
+  }
+}

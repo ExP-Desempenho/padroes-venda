@@ -2,6 +2,13 @@
 <html lang="pt-BR">
 <head>
 <meta charset="utf-8">
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-T6HZ3F2R');</script>
+<!-- End Google Tag Manager -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Padrões do ENEM · ExP Desempenho</title>
 <meta name="description" content="61 padrões que se repetem na prova do ENEM, com 109 questões oficiais de 2016 a 2023, a alternativa correta destacada e o raciocínio de cada uma passo a passo.">
@@ -156,6 +163,8 @@ footer a{color:var(--menta);text-decoration:none}
 </style>
 </head>
 <body>
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T6HZ3F2R"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <header>
   <div class="wrap">
@@ -396,17 +405,50 @@ footer a{color:var(--menta);text-decoration:none}
 </footer>
 
 <script>
-!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
-n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
-document,'script','https://connect.facebook.net/en_US/fbevents.js');
-fbq('init','1011587088582742');fbq('track','PageView');
-document.querySelectorAll('a[data-plano]').forEach(function(a){
-  a.addEventListener('click',function(){
-    if(window.fbq)fbq('track','InitiateCheckout',{content_name:a.dataset.plano});
+// Camada de dados: a página só descreve o que aconteceu; GA4, Pixel e CAPI moram no GTM.
+window.dataLayer = window.dataLayer || [];
+(function () {
+  var P = {
+    dia1:  { item_id: 'padroes-dia1',  item_name: 'Padrões do ENEM · Dia 1', price: 14.99, quantity: 1 },
+    combo: { item_id: 'padroes-combo', item_name: 'Padrões do ENEM · Os dois dias', price: 24.99, quantity: 1 },
+    dia2:  { item_id: 'padroes-dia2',  item_name: 'Padrões do ENEM · Dia 2', price: 14.99, quantity: 1 }
+  };
+  function ck(n) { var m = document.cookie.match('(?:^|; )' + n + '=([^;]*)'); return m ? m[1] : ''; }
+  function push(o) { dataLayer.push({ ecommerce: null }); dataLayer.push(o); }
+
+  // ViewContent / view_item: quando os planos aparecem na tela.
+  var planos = document.getElementById('planos');
+  new IntersectionObserver(function (es, io) {
+    if (!es[0].isIntersecting) return;
+    io.disconnect();
+    push({ event: 'view_item', ecommerce: { currency: 'BRL', items: [P.dia1, P.combo, P.dia2] } });
+  }, { threshold: 0.35 }).observe(planos);
+
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest && e.target.closest('a');
+    if (!a) return;
+    var item = P[a.dataset.plano];
+    if (!item) {
+      if (a.hash) dataLayer.push({ event: 'cta_click', cta_text: a.textContent.trim(), cta_target: a.hash });
+      return;
+    }
+    // Leva UTMs/fbclid/gclid para o checkout e o client_id+session_id do GA4 no sck,
+    // que volta no webhook da Kiwify para o purchase cair na sessão certa do GA4.
+    var u = new URL(a.href);
+    new URLSearchParams(location.search).forEach(function (v, k) { if (!u.searchParams.has(k)) u.searchParams.set(k, v); });
+    var cid = ck('_ga').split('.').slice(2).join('.');
+    var gs = ck('_ga_CYZ3LZE0KW'), sid = (gs.match(/^GS1\.\d+\.(\d+)/) || gs.match(/[.$]s(\d+)/) || [])[1];
+    if (cid) u.searchParams.set('sck', cid + (sid ? '_' + sid : ''));
+    a.href = u.toString();
+    push({ event: 'begin_checkout', ecommerce: { currency: 'BRL', value: item.price, items: [item] } });
   });
-});
+
+  document.querySelectorAll('details').forEach(function (d) {
+    d.addEventListener('toggle', function () {
+      if (d.open) dataLayer.push({ event: 'faq_open', faq_question: d.querySelector('summary').textContent.trim() });
+    });
+  });
+})();
 </script>
 <noscript><img height="1" width="1" style="display:none"
 src="https://www.facebook.com/tr?id=1011587088582742&ev=PageView&noscript=1"></noscript>
