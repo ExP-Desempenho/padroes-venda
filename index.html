@@ -416,13 +416,12 @@ window.dataLayer = window.dataLayer || [];
   function ck(n) { var m = document.cookie.match('(?:^|; )' + n + '=([^;]*)'); return m ? m[1] : ''; }
   function push(o) { dataLayer.push({ ecommerce: null }); dataLayer.push(o); }
 
-  // ViewContent / view_item: quando os planos aparecem na tela.
-  var planos = document.getElementById('planos');
+  // ViewContent / view_item: quando o primeiro plano aparece pela metade (no celular a seção é maior que a tela).
   new IntersectionObserver(function (es, io) {
     if (!es[0].isIntersecting) return;
     io.disconnect();
     push({ event: 'view_item', ecommerce: { currency: 'BRL', items: [P.dia1, P.combo, P.dia2] } });
-  }, { threshold: 0.35 }).observe(planos);
+  }, { threshold: 0.5 }).observe(document.querySelector('.plano'));
 
   document.addEventListener('click', function (e) {
     var a = e.target.closest && e.target.closest('a');
