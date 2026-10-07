@@ -167,6 +167,24 @@ footer a{color:var(--menta);text-decoration:none}
 .lgpd .btn{font-size:14px;padding:10px 18px}
 .lgpd .btn.linha{color:var(--creme);border-color:rgba(246,239,225,.5)}
 
+/* No celular o aviso virava um cartao de 129px flutuando sobre o botao principal
+   do heroi (medido em 390x667: 60px de sobreposicao). Vira uma barra rente ao
+   rodape, de ~60px, que nao alcanca mais o CTA. O consentimento continua igual. */
+@media (max-width:600px){
+  .lgpd{left:0;right:0;bottom:0;max-width:none;border-radius:12px 12px 0 0;
+    border-left:0;border-right:0;border-bottom:0;
+    padding:10px 14px calc(10px + env(safe-area-inset-bottom));
+    gap:10px;flex-wrap:nowrap;align-items:center}
+  .lgpd p{font-size:12.5px;line-height:1.3;flex:1 1 auto;min-width:0}
+  .lgpd p .so-desktop{display:none}
+  .lgpd .btn{font-size:12.5px;padding:8px 13px;white-space:nowrap;letter-spacing:0}
+}
+@media (max-width:400px){
+  .lgpd{padding:8px 12px calc(8px + env(safe-area-inset-bottom));gap:8px}
+  .lgpd p{font-size:12px;line-height:1.22}
+  .lgpd .btn{font-size:12px;padding:7px 10px}
+}
+
 @media (max-width:900px){
   .hero .grid,.anatomia .grid{grid-template-columns:1fr;gap:34px}
   .hero h1{font-size:40px;letter-spacing:-1.2px}
@@ -467,7 +485,7 @@ window.dataLayer = window.dataLayer || [];
 })();
 </script>
 <div class="lgpd" id="lgpd" role="region" aria-label="Aviso de cookies" hidden>
-  <p>Usamos cookies para medir visitas e melhorar nossos anúncios.
+  <p>Usamos cookies para medir visitas<span class="so-desktop"> e melhorar nossos anúncios</span>.
     <a href="https://aviradaenem.com.br/privacidade.html" target="_blank" rel="noopener">Política de privacidade</a></p>
   <button class="btn linha" type="button" data-lgpd="recusado">Recusar</button>
   <button class="btn" type="button" data-lgpd="ok">Entendi</button>
