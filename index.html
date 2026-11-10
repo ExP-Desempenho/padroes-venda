@@ -18,10 +18,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 })(window,document,'script','dataLayer','GTM-T6HZ3F2R');</script>
 <!-- End Google Tag Manager -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Padrões do ENEM · ExP Desempenho</title>
-<meta name="description" content="61 padrões que se repetem na prova do ENEM, com 109 questões oficiais de 2016 a 2023, a alternativa correta destacada e o raciocínio de cada uma passo a passo.">
-<meta property="og:title" content="Padrões do ENEM · ExP Desempenho">
-<meta property="og:description" content="A prova se repete. 61 padrões, 109 questões oficiais, o raciocínio de cada uma passo a passo.">
+<title>Padrões do ENEM · Dia 2 · ExP Desempenho</title>
+<meta name="description" content="Padrões do Dia 2 do ENEM: 30 raciocínios de Natureza e Matemática que se repetem, com 47 questões oficiais de 2016 a 2023, a alternativa correta destacada e o raciocínio de cada uma passo a passo.">
+<meta property="og:title" content="Padrões do ENEM · Dia 2 · ExP Desempenho">
+<meta property="og:description" content="A prova se repete. 30 padrões de Natureza e Matemática, 47 questões oficiais, o raciocínio de cada uma passo a passo.">
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -135,6 +135,7 @@ h2+p.sub{font-size:18px;color:#4A4642;margin-top:16px;max-width:680px}
 .plano li{padding:7px 0 7px 24px;position:relative}
 .plano li::before{content:"✓";position:absolute;left:0;color:var(--grama);font-weight:900}
 .plano .btn{margin-top:auto;text-align:center}
+.grade.uma{grid-template-columns:minmax(0,460px);justify-content:center}
 .pag{text-align:center;font-size:13.5px;color:var(--cinza);margin-top:24px}
 
 /* ---------- faq ---------- */
@@ -185,6 +186,24 @@ footer a{color:var(--menta);text-decoration:none}
   .lgpd .btn{font-size:12px;padding:7px 10px}
 }
 
+/* ---------- fundo dinâmico (design do Fable · fundo.js v3) ----------
+   Um canvas por seção, montado só quando a seção chega perto da tela e desmontado quando sai.
+   O canvas fica entre o fundo da seção e o conteúdo; cores da marca dos Padrões. */
+[data-fx]{position:relative;overflow:hidden;isolation:isolate}
+[data-fx]>.fundo-cv{z-index:0}
+[data-fx]>.wrap{position:relative;z-index:1}
+.hero .glow{z-index:0}
+.dentro .dia{background:rgba(24,47,37,.92)}
+section[data-fx]>.fundo-cv{-webkit-mask-image:linear-gradient(180deg,transparent,#000 16%,#000 84%,transparent);
+  mask-image:linear-gradient(180deg,transparent,#000 16%,#000 84%,transparent)}
+.hero[data-fx]>.fundo-cv{-webkit-mask-image:linear-gradient(180deg,rgba(0,0,0,.4),rgba(0,0,0,.6) 50%,#000 85%);
+  mask-image:linear-gradient(180deg,rgba(0,0,0,.4),rgba(0,0,0,.6) 50%,#000 85%)}
+@media (min-width:901px){.hero[data-fx]>.fundo-cv{-webkit-mask-image:linear-gradient(90deg,rgba(0,0,0,.35),rgba(0,0,0,.55) 45%,#000 75%);
+  mask-image:linear-gradient(90deg,rgba(0,0,0,.35),rgba(0,0,0,.55) 45%,#000 75%)}}
+.hero h1,.hero p.lead,.hero .mini,.dentro h2,.fecha h2,.fecha p{text-shadow:0 1px 14px rgba(11,35,24,.92),0 0 2px rgba(11,35,24,.6)}
+section[data-fx]:not(.dentro):not(.fecha) :is(h2,p.sub,.pag){text-shadow:0 1px 10px rgba(246,239,225,.95),0 0 2px rgba(246,239,225,.8)}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn{transition:none}}
+
 @media (max-width:900px){
   .hero .grid,.anatomia .grid{grid-template-columns:1fr;gap:34px}
   .hero h1{font-size:40px;letter-spacing:-1.2px}
@@ -204,41 +223,41 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <header>
   <div class="wrap">
     <span class="marca">EXP DESEMPENHO</span>
-    <span class="nav">Padrões do ENEM</span>
+    <span class="nav">Padrões do ENEM · Dia 2</span>
   </div>
 </header>
 
-<div class="hero">
+<div class="hero" data-fx="escuro">
   <div class="glow"></div>
   <div class="wrap grid">
     <div>
-      <span class="selo">MATERIAL EM PDF · ENTREGA IMEDIATA</span>
+      <span class="selo">PDF · PADRÕES DO DIA 2</span>
       <h1>A prova se repete.<br>Você só nunca<br><em class="hl">tinha visto.</em></h1>
       <p class="lead">O ENEM cobra os mesmos raciocínios ano após ano, com roupa nova.
-        Mapeamos 61 desses padrões nas provas de 2016 a 2023 e mostramos, questão por questão,
-        como reconhecer cada um em menos de um minuto.</p>
+        Mapeamos 30 desses padrões de Natureza e Matemática nas provas de 2016 a 2023 e mostramos,
+        questão por questão, como reconhecer cada um em menos de um minuto.</p>
       <div class="cta">
-        <a class="btn menta" href="#planos">Quero os padrões</a>
+        <a class="btn menta" href="#planos">Quero os padrões do Dia 2</a>
         <a class="btn linha" style="color:#F6EFE1;border-color:rgba(246,239,225,.5)" href="#amostra">Ver por dentro</a>
       </div>
-      <p class="mini">A partir de R$ 14,99 · Pix, cartão ou boleto · Acesso na hora</p>
+      <p class="mini">R$ 19,99 · Pix, cartão ou boleto · Acesso na hora</p>
     </div>
     <div>
-      <img class="capa" src="pagina-dia1-solo.png" alt="Página do material Padrões do ENEM">
+      <img class="capa" src="pagina-dia2-solo.webp" width="911" height="1288" fetchpriority="high" alt="Página do material Padrões do ENEM · Dia 2">
     </div>
   </div>
 </div>
 
 <div class="numeros">
   <div class="wrap">
-    <div><b>61</b><span>padrões</span></div>
-    <div><b>109</b><span>questões oficiais</span></div>
-    <div><b>8</b><span>anos de prova</span></div>
-    <div><b>5</b><span>áreas</span></div>
+    <div><b>30</b><span>padrões</span></div>
+    <div><b>47</b><span>questões oficiais</span></div>
+    <div><b>6</b><span>anos de prova</span></div>
+    <div><b>4</b><span>disciplinas</span></div>
   </div>
 </div>
 
-<section class="problema">
+<section class="problema" data-fx="claro">
   <div class="wrap">
     <div class="regua"></div>
     <h2>Resolver mil questões não<br>é o mesmo que entender a prova</h2>
@@ -248,7 +267,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="card">
         <h3>Você erra o mesmo tipo</h3>
         <p>Não é falta de conteúdo. É um raciocínio específico que a banca cobra e que passa
-          despercebido toda vez — em Linguagens, em Humanas, em Natureza.</p>
+          despercebido toda vez — em Química, em Física, em Biologia, em Matemática.</p>
       </div>
       <div class="card">
         <h3>O gabarito não ensina</h3>
@@ -264,7 +283,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
-<section class="anatomia" id="anatomia">
+<section class="anatomia" id="anatomia" data-fx="claro">
   <div class="wrap">
     <div class="regua"></div>
     <h2>Um padrão por página.<br>Duas questões reais ao lado.</h2>
@@ -273,7 +292,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="grid">
       <ol class="passos">
         <li><b>01</b><p><strong>O nome do padrão.</strong> Uma frase que você consegue repetir
-          na hora da prova, do tipo “a pergunta é a intenção, não o conteúdo”.</p></li>
+          na hora da prova, do tipo “a armadilha está na unidade”.</p></li>
         <li><b>02</b><p><strong>Quando ele aparece.</strong> O sinal no enunciado que entrega
           que a banca está cobrando aquele raciocínio.</p></li>
         <li><b>03</b><p><strong>A cadeia de quatro passos.</strong> A sequência exata para sair
@@ -281,116 +300,87 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <li><b>04</b><p><strong>Duas questões oficiais, recortadas da prova.</strong> Com a
           alternativa correta grifada e a explicação de por que é ela — e não as outras.</p></li>
       </ol>
-      <img class="print" src="pagina-dia2-par.png" alt="Exemplo de página do Dia 2">
+      <img class="print" src="pagina-dia2-par.webp" width="911" height="1288" loading="lazy" alt="Exemplo de página do Dia 2">
     </div>
   </div>
 </section>
 
-<section class="dentro">
+<section class="dentro" data-fx="escuro">
   <div class="wrap">
     <div class="regua"></div>
     <h2>O que tem dentro</h2>
     <div class="dias">
       <div class="dia">
-        <h3>Dia 1 — Linguagens e Humanas</h3>
-        <div class="qt">31 PADRÕES · 62 QUESTÕES</div>
+        <h3>Ciências da Natureza</h3>
+        <div class="qt">24 PADRÕES · 36 QUESTÕES</div>
         <ul>
-          <li>Intenção do autor, tese e ponto de vista</li>
-          <li>Variação linguística e identidade</li>
-          <li>Gênero e tipo textual</li>
-          <li>Tecnologia, desigualdade e sociedade</li>
-          <li>Arte brasileira e referências culturais</li>
-          <li>Cidadania, poder e território</li>
-          <li>Dois textos: convergência e divergência</li>
-          <li>Geografia física, migração e meio ambiente</li>
+          <li>Separação de misturas pelas propriedades</li>
+          <li>Leitura de tabela e de esquema</li>
+          <li>Calor específico e mudança de estado</li>
+          <li>Oxidação, redução e ligação química</li>
+          <li>Circuitos, indução e blindagem elétrica</li>
+          <li>Força, lançamento e óptica</li>
+          <li>Ciclos da natureza e bioacumulação</li>
+          <li>Genética, osmose e fisiologia</li>
         </ul>
       </div>
       <div class="dia">
-        <h3>Dia 2 — Natureza e Matemática</h3>
-        <div class="qt">30 PADRÕES · 47 QUESTÕES</div>
+        <h3>Matemática</h3>
+        <div class="qt">6 PADRÕES · 11 QUESTÕES</div>
         <ul>
-          <li>Leitura de gráfico e de tabela</li>
-          <li>Estequiometria e cálculo de concentração</li>
-          <li>Oxidação, redução e ligação química</li>
-          <li>Energia, calor e mudança de estado</li>
-          <li>Eletricidade e circuitos</li>
-          <li>Genética, ecologia e fisiologia</li>
-          <li>Proporção, porcentagem e escala</li>
-          <li>Notação científica e unidades</li>
+          <li>Porcentagem: sobre qual base</li>
+          <li>Média como soma total</li>
+          <li>Gráfico que dá o número para a conta</li>
+          <li>Unidades e conversão</li>
+          <li>Trecho do gráfico, não valor exato</li>
+          <li>Notação científica</li>
         </ul>
       </div>
     </div>
   </div>
 </section>
 
-<section class="amostra" id="amostra">
+<section class="amostra" id="amostra" data-fx="claro">
   <div class="wrap">
     <div class="regua"></div>
     <h2>Três páginas, do jeito<br>que você vai receber</h2>
     <p class="sub">Questões oficiais do ENEM (INEP/MEC), recortadas direto do caderno de prova.</p>
     <div class="tiras">
       <figure>
-        <img src="pagina-dia1-par.png" alt="Padrão de Linguagens com duas questões">
-        <figcaption>Linguagens · duas questões na mesma página</figcaption>
+        <img src="pagina-dia2-porcentagem.webp" width="911" height="1288" loading="lazy" alt="Padrão de Matemática com duas questões">
+        <figcaption>Matemática · duas questões na mesma página</figcaption>
       </figure>
       <figure>
-        <img src="pagina-dia1-solo.png" alt="Padrão com uma questão em destaque">
-        <figcaption>Humanas · questão única em destaque</figcaption>
+        <img src="pagina-dia2-fervendo.webp" width="911" height="1288" loading="lazy" alt="Padrão de Física com uma questão em destaque">
+        <figcaption>Física · questão única em destaque</figcaption>
       </figure>
       <figure>
-        <img src="pagina-dia2-par.png" alt="Padrão de Natureza e Matemática">
-        <figcaption>Natureza · padrão com cadeia de raciocínio</figcaption>
+        <img src="pagina-dia2-par.webp" width="911" height="1288" loading="lazy" alt="Padrão de Biologia com cadeia de raciocínio">
+        <figcaption>Biologia · padrão com cadeia de raciocínio</figcaption>
       </figure>
     </div>
   </div>
 </section>
 
-<section class="planos" id="planos">
+<section class="planos" id="planos" data-fx="claro">
   <div class="wrap">
     <div class="regua"></div>
-    <h2>Escolha o seu</h2>
+    <h2>Garanta o seu Dia 2</h2>
     <p class="sub">Entrega imediata por e-mail, em PDF. Dá para ler no celular, no computador
       ou imprimir.</p>
-    <div class="grade">
-      <div class="plano">
-        <h3>Padrões do Dia 1</h3>
-        <div class="area">Linguagens e Humanas</div>
-        <div class="preco"><span class="cifrao">R$</span><span class="valor">14,99</span></div>
-        <ul>
-          <li>31 padrões</li>
-          <li>62 questões oficiais</li>
-          <li>PDF de 31 páginas</li>
-          <li>Acesso imediato</li>
-        </ul>
-        <a class="btn linha" data-plano="dia1" href="https://pay.kiwify.com.br/6RuvQul">Comprar o Dia 1</a>
-      </div>
-
+    <div class="grade uma">
       <div class="plano destaque">
-        <span class="fita">MELHOR ESCOLHA · ECONOMIZE R$ 4,99</span>
-        <h3>Os dois dias</h3>
-        <div class="area">A prova inteira</div>
-        <div class="preco"><span class="cifrao">R$</span><span class="valor">24,99</span></div>
-        <div class="de">R$ 29,98 comprando separado</div>
-        <ul>
-          <li>61 padrões das cinco áreas</li>
-          <li>109 questões oficiais</li>
-          <li>Dois PDFs, 61 páginas</li>
-          <li>Acesso imediato</li>
-        </ul>
-        <a class="btn" data-plano="combo" href="https://pay.kiwify.com.br/ZDzUBiP">Quero os dois</a>
-      </div>
-
-      <div class="plano">
+        <span class="fita">PARA O 2º DIA DO ENEM · 15/11</span>
         <h3>Padrões do Dia 2</h3>
         <div class="area">Natureza e Matemática</div>
-        <div class="preco"><span class="cifrao">R$</span><span class="valor">14,99</span></div>
+        <div class="preco"><span class="cifrao">R$</span><span class="valor">19,99</span></div>
         <ul>
           <li>30 padrões</li>
           <li>47 questões oficiais</li>
           <li>PDF de 30 páginas</li>
           <li>Acesso imediato</li>
         </ul>
-        <a class="btn linha" data-plano="dia2" href="https://pay.kiwify.com.br/rxqs5GL">Comprar o Dia 2</a>
+        <a class="btn" data-plano="dia2" href="https://pay.kiwify.com.br/rxqs5GL">Quero o Dia 2</a>
       </div>
     </div>
     <p class="pag">Pagamento por Pix, cartão ou boleto · Compra processada pela Kiwify ·
@@ -398,7 +388,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
-<section class="faq">
+<section class="faq" data-fx="claro">
   <div class="wrap">
     <div class="regua"></div>
     <h2>Perguntas que todo mundo faz</h2>
@@ -412,9 +402,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <p>Serve. O material não assume conteúdo avançado: ele ensina a ler o enunciado e a
         reconhecer o que a banca está pedindo. Quem já estuda há tempo tende a ganhar
         velocidade; quem está começando ganha direção.</p></details>
-    <details><summary>Qual a diferença entre o Dia 1 e o Dia 2?</summary>
-      <p>Dia 1 cobre Linguagens e Ciências Humanas. Dia 2 cobre Ciências da Natureza e
-        Matemática. São materiais independentes — e você pode levar os dois por R$ 24,99.</p></details>
+    <details><summary>O que o material cobre?</summary>
+      <p>O segundo dia do ENEM: Ciências da Natureza (Química, Física e Biologia) e Matemática.
+        São 30 padrões e 47 questões oficiais, de provas aplicadas entre 2016 e 2023.</p></details>
     <details><summary>Dá para imprimir?</summary>
       <p>Dá. O PDF é em A4 e foi desenhado para ficar legível impresso, inclusive em
         preto e branco.</p></details>
@@ -423,12 +413,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
-<section class="fecha">
+<section class="fecha" data-fx="escuro">
   <div class="wrap">
-    <h2>A prova de novembro<br>já foi escrita antes.</h2>
-    <p>Os padrões estão nas oito provas anteriores. A diferença é quem chega sabendo
+    <h2>O 2º dia da prova<br>já foi escrito antes.</h2>
+    <p>Os padrões estão nas provas de 2016 a 2023. A diferença é quem chega sabendo
       reconhecê-los — e quem descobre no dia.</p>
-    <a class="btn menta" href="#planos">Ver os planos</a>
+    <a class="btn menta" href="#planos">Quero o Dia 2</a>
   </div>
 </section>
 
@@ -444,18 +434,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 window.dataLayer = window.dataLayer || [];
 (function () {
   var P = {
-    dia1:  { item_id: 'padroes-dia1',  item_name: 'Padrões do ENEM · Dia 1', price: 14.99, quantity: 1 },
-    combo: { item_id: 'padroes-combo', item_name: 'Padrões do ENEM · Os dois dias', price: 24.99, quantity: 1 },
-    dia2:  { item_id: 'padroes-dia2',  item_name: 'Padrões do ENEM · Dia 2', price: 14.99, quantity: 1 }
+    dia2:  { item_id: 'padroes-dia2',  item_name: 'Padrões do ENEM · Dia 2', price: 19.99, quantity: 1 }
   };
   function ck(n) { var m = document.cookie.match('(?:^|; )' + n + '=([^;]*)'); return m ? m[1] : ''; }
   function push(o) { dataLayer.push({ ecommerce: null }); dataLayer.push(o); }
 
-  // ViewContent / view_item: quando o primeiro plano aparece pela metade (no celular a seção é maior que a tela).
+  // ViewContent / view_item: quando o plano aparece pela metade (no celular a seção é maior que a tela).
   new IntersectionObserver(function (es, io) {
     if (!es[0].isIntersecting) return;
     io.disconnect();
-    push({ event: 'view_item', ecommerce: { currency: 'BRL', items: [P.dia1, P.combo, P.dia2] } });
+    push({ event: 'view_item', ecommerce: { currency: 'BRL', items: [P.dia2] } });
   }, { threshold: 0.5 }).observe(document.querySelector('.plano'));
 
   document.addEventListener('click', function (e) {
@@ -509,6 +497,36 @@ window.dataLayer = window.dataLayer || [];
 </script>
 <noscript><img height="1" width="1" style="display:none"
 src="https://www.facebook.com/tr?id=1011587088582742&ev=PageView&noscript=1"></noscript>
+<script src="fundo.js?v=20261110" defer></script>
+<script>
+// Fundo dinâmico (design do Fable): um canvas por seção marcada com data-fx, montado quando a seção
+// chega perto da tela e desmontado quando se afasta. Só começa depois do load para não atrasar a página.
+// O fundo.js já respeita prefers-reduced-motion (quadro parado), pausa fora da tela e roda a 30 fps no celular.
+(function () {
+  function iniciar() {
+    if (!window.Fundo || !window.IntersectionObserver) return;
+    Fundo.temas.padroesEscuro = { fundo: '#0B2318', ponto: [62, 230, 176], pontoAlfa: 0.72, traco: [62, 230, 176], tracoAlfa: 0.8, halo: [62, 230, 176], haloAlfa: 0.07 };
+    Fundo.temas.padroesClaro  = { fundo: '#F6EFE1', ponto: [47, 163, 92],  pontoAlfa: 0.8,  traco: [47, 163, 92],  tracoAlfa: 0.7, halo: [47, 163, 92],  haloAlfa: 0.05 };
+    var celular = window.innerWidth < 700;
+    function opcoes(el) {
+      var escuro = el.getAttribute('data-fx') === 'escuro', hero = el.classList.contains('hero');
+      if (escuro) return { preset: 'total', tema: 'padroesEscuro', transparente: true, halo: hero, fpsMax: 30,
+        intensidade: hero ? (celular ? 0.75 : 0.9) : 0.7, densidade: celular ? 0.8 : 1, semente: hero ? 7 : 11 };
+      return { preset: 'sutil', tema: 'padroesClaro', fpsMax: 30, intensidade: 0.5, densidade: celular ? 0.75 : 0.9, semente: 5 };
+    }
+    var io = new IntersectionObserver(function (es) {
+      es.forEach(function (e) {
+        var el = e.target;
+        if (e.isIntersecting && !el.__fundo) el.__fundo = Fundo.montar(el, opcoes(el));
+        else if (!e.isIntersecting && el.__fundo) { el.__fundo.destruir(); el.__fundo = null; }
+      });
+    }, { rootMargin: '300px 0px' });
+    document.querySelectorAll('[data-fx]').forEach(function (el) { io.observe(el); });
+  }
+  function depois() { (window.requestIdleCallback || function (f) { setTimeout(f, 200); })(iniciar, { timeout: 1500 }); }
+  if (document.readyState === 'complete') depois(); else window.addEventListener('load', depois);
+})();
+</script>
 
 </body>
 </html>
